@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    //Добавляю для котлина, чтоб kapt работало
+    id 'kotlin-kapt'
 }
 
 android {
@@ -32,6 +34,9 @@ android {
 }
 
 dependencies {
+    //Dagger
+    implementation 'com.google.dagger:dagger:2.41'
+    kapt 'com.google.dagger:dagger-compiler:2.41' //Добавляю библеотеку для котлина - kapt
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

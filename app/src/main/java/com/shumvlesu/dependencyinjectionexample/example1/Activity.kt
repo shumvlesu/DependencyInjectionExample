@@ -1,6 +1,7 @@
 package com.shumvlesu.dependencyinjectionexample.example1
 
 class Activity {
+
     val monitor = Monitor()
     val keyboard = Keyboard()
     val mouse = Mouse()
@@ -10,4 +11,5 @@ class Activity {
         Processor()
     )
     val computer = Computer(monitor, computerTower, keyboard, mouse)
+
 }

@@ -2,7 +2,13 @@ package com.shumvlesu.dependencyinjectionexample.example1
 
 class Activity {
 
-    //Первый способ получения зависимотси через метод get компонента
-    val computer : Computer = Component().getComputer()
+    //Лучший способ доставки зависимотсти - "снаружи" через иньекцию
+    lateinit var computer : Computer
+    lateinit var keyboard: Keyboard
+
+    init {
+       //Сама иньекция. В настоящей активити эта иньекция стояла бы в методе активити onCreate
+       Component().inject(this)
+    }
 
 }

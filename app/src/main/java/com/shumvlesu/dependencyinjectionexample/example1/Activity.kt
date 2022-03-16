@@ -2,14 +2,7 @@ package com.shumvlesu.dependencyinjectionexample.example1
 
 class Activity {
 
-    val monitor = Monitor()
-    val keyboard = Keyboard()
-    val mouse = Mouse()
-    val computerTower = ComputerTower(
-        Storage(),
-        Memory(),
-        Processor()
-    )
-    val computer = Computer(monitor, computerTower, keyboard, mouse)
+    //Первый способ получения зависимотси через метод get компонента
+    val computer : Computer = Component().getComputer()
 
 }

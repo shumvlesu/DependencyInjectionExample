@@ -10,10 +10,19 @@ class Activity {
    //lateinit var keyboard: Keyboard //Если мы делаем иньекцию зависимости (объекта Keyboard) в поле keyboard, то его тоже помечаем аннотацией @Inject
    //переменная должна быть публичной иначе даггер не сможет вставить зависимость
 
+    //ДЗ
+    @Inject
+    lateinit var monitor: Monitor
+    init {
+       DaggerNewComponent.create().inject(this)
+    }
+
+
 
     //Пример иньекции поля через get метод.
-    val keyboard: Keyboard = DaggerNewComponent.create().getKeyboard()
-
+    val component = DaggerNewComponent.create()
+    val keyboard: Keyboard = component.getKeyboard()
+    val mouse: Mouse = component.getMouse()
 
     //Когда инжектишь через get нет нужды в init
     /*init {

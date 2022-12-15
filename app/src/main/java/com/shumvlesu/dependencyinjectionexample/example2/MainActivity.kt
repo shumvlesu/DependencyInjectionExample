@@ -15,6 +15,6 @@ class MainActivity : AppCompatActivity() {
 
         val activity = Activity()
         activity.keyboard.toString() //Инжектим клавиатуру в MainActivity.
-
+        activity.mouse.toString()
     }
 }
